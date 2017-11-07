@@ -1,0 +1,11 @@
+---
+typecho:
+  restart: always
+  image: derekamz/typecho:latest
+  container_name: typecho
+  volumes:
+    - /data:/data
+  external_links:
+    - mysql
+  ports:
+    - "8080:80"
