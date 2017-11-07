@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y unzip \
     && chmod -R 777 /var/www/html && chmod +x /entrypoint.sh \
     && rm -rf /tmp/* \
     && apt-get purge -y --auto-remove unzip
-    && docker-php-ext-install  -j$(nproc) mbstring mysql gd pdo pdo_mysql
-    && docker-php-ext-enable mbstring mysql gd pdo pdo_mysql
+    && docker-php-ext-install  -j$(nproc) mbstring gd pdo pdo_mysql
+    && docker-php-ext-enable mbstring gd pdo pdo_mysql
 VOLUME /data
 
 ENTRYPOINT ["/entrypoint.sh"]
